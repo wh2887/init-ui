@@ -1,5 +1,10 @@
 <template>
-  <button class="i-button">按钮</button>
+  <div>
+    <button class="i-button">
+        <i-icon></i-icon>
+        <slot/>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -8,7 +13,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
   .i-button {
     font-size: var(--font-size);
@@ -29,6 +34,8 @@
     &:focus {
       outline: none;
     }
+
+
   }
 
 </style>
