@@ -1,8 +1,10 @@
 <template>
   <div>
-    <button class="i-button" :class="{[`icon-${iconPosition}`]:true}">
-      <i-icon v-if="icon" class="icon " :icon-name="icon"></i-icon>
-      <i-icon class="loading" icon-name="loading"></i-icon>
+    <button class="i-button" :class="{[`icon-${iconPosition}`]:true}"
+            @click="$emit('click')"
+    >
+      <i-icon v-if="!loading" class="icon" :icon-name="icon"></i-icon>
+      <i-icon class="loading" v-if="loading" icon-name="loading"></i-icon>
       <div class="content">
         <slot/>
       </div>
@@ -15,6 +17,10 @@
     name: 'Button.vue',
     props: {
       icon: {},
+      loading: {
+        type: Boolean,
+        default: false
+      },
       iconPosition: {
         type: String,
         default: 'left',
@@ -50,6 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    vertical-align: middle;
 
     &:hover {
       border-color: var(--border-color-hover);
@@ -67,8 +74,9 @@
       margin-right: .1em;
       order: 1;
     }
-    > .loading{
-      animation: spin 1s infinite linear ;
+
+    > .loading {
+      animation: spin 1s infinite linear;
     }
 
     > .content {
