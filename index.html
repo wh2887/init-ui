@@ -11,24 +11,37 @@
       box-sizing: border-box
     }
 
+    :root {
+      --button-height: 32px;
+      --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #333;
+      --border-color: #999;
+      --border-color-hover: #666;
+    }
+
+    #app {
+      margin: 20px;
+    }
+
+    body {
+      font-size: var(--font-size);
+    }
+
   </style>
 </head>
 <body>
 
 <div id="app">
+
   <i-button></i-button>
 
 </div>
 
 
-<script src="./node_modules/vue/dist/vue.min.js"></script>
-<script src="./button.js"></script>
-
-<script>
-  new Vue({
-    el: '#app',
-  })
-</script>
+<script src="src/app.js"></script>
 
 </body>
 </html>
