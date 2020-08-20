@@ -1,5 +1,4 @@
 <template>
-  <div>
     <button class="i-button" :class="{[`icon-${iconPosition}`]:true}"
             @click="$emit('click')"
     >
@@ -9,7 +8,6 @@
         <slot/>
       </div>
     </button>
-  </div>
 </template>
 
 <script>
@@ -32,7 +30,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
   @keyframes spin {
     0% {
       transform: rotate(0deg)
@@ -43,32 +41,17 @@
   }
 
   .i-button {
-    // TODO
-    margin-top: .2em;
-    margin-right: .2em;
-
-    font-size: var(--font-size);
-    height: var(--button-height);
-    padding: 0 1em;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
+    font-size: var(--font-size); height: var(--button-height); padding: 0 1em;
+    border-radius: var(--border-radius); border: 1px solid var(--border-color);
     background: var(--button-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex; justify-content: center; align-items: center;
     vertical-align: middle;
 
-    &:hover {
-      border-color: var(--border-color-hover);
-    }
+    &:hover { border-color: var(--border-color-hover); }
 
-    &:active {
-      border-color: var(--border-active-bg);
-    }
+    &:active { border-color: var(--border-active-bg); }
 
-    &:focus {
-      outline: none;
-    }
+    &:focus { outline: none; }
 
     > .icon {
       margin-right: .1em;
@@ -97,7 +80,6 @@
       }
 
     }
-
 
   }
 
