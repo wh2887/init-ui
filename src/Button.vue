@@ -10,7 +10,7 @@
     </button>
 </template>
 
-<script>
+<script lang="js">
   export default {
     name: 'Button.vue',
     props: {
