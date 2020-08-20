@@ -10,11 +10,22 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-  .i-button-group{
+  .i-button-group {
     display: inline-flex;
     vertical-align: middle;
+    > .i-button{
+      border-radius: 0;
+      &:first-child{
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+      }
+      &:last-child{
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+    }
   }
 
 </style>
