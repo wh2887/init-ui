@@ -32,7 +32,7 @@ describe('Button', () => {
     }).$mount()
     const useElements = vm.$el.querySelectorAll('use')
     expect(useElements.length).to.equal(1)
-    expect(useElements[0].getAttribute('xlink:href')).to.equal('#iccon-loading')
+    expect(useElements[0].getAttribute('xlink:href')).to.equal('#icon-loading')
     vm.$destroy()
   })
   it('icon 默认的 order 是 1', () => {
