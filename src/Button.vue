@@ -1,6 +1,6 @@
 <template>
-  <button class="i-button" :class="{[`icon-${iconPosition}`]:true}"
-          @click="xxx"
+  <button class="i-button fuck" :class="{[`icon-${iconPosition}`]:true}"
+          @click="$emit('click')"
   >
     <i-icon v-if="!loading" class="icon" :icon-name="icon"></i-icon>
     <i-icon class="loading" v-if="loading" icon-name="loading"></i-icon>
@@ -32,20 +32,6 @@
         }
       }
     },
-    methods: {
-      xxx(e) {
-        console.log(e)
-        this.$emit('click')
-        let inX = e.clientX - e.target.offsetLeft
-        let inY = e.clientY - e.target.offsetTop
-        let button = document.querySelector('.i-button')
-        if (e) {
-          document.styleSheets[1].addRule('.i-button::after', 'display:block')
-        }
-      },
-      yyy() {
-      }
-    }
   }
 </script>
 
@@ -116,7 +102,6 @@
       }
 
     }
-
   }
 
 </style>
