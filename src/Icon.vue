@@ -1,10 +1,12 @@
 <template>
-    <svg class="icon" aria-hidden="true" v-if="iconName">
-      <use :xlink:href=" `#icon-${iconName}` "></use>
-    </svg>
+  <svg class="icon" aria-hidden="true" v-if="iconName">
+    <use :xlink:href=" `#icon-${iconName}` "></use>
+  </svg>
 </template>
 
 <script>
+  import './svg.js'
+
   export default {
     name: 'Icon.vue',
     props: ['iconName']
