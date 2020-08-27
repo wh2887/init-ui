@@ -17,7 +17,7 @@
     components: {
       'i-icon': Icon
     },
-    name: 'Button.vue',
+    name: 'Button',
     props: {
       icon: {},
       loading: {

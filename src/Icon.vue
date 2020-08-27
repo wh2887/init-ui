@@ -8,7 +8,7 @@
   import './svg.js'
 
   export default {
-    name: 'Icon.vue',
+    name: 'Icon',
     props: ['iconName']
   }
 </script>

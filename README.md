@@ -11,6 +11,7 @@
     ```css
     *,*::before,*::after{box-sizing:border-box}
     ```
+  
     你还需要设置默认颜色等变量（后续会改为 SCSS 变量）
     IE 8 及以上浏览器都支持此样式
     ```css

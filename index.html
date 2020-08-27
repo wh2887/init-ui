@@ -30,28 +30,42 @@
     }
 
   </style>
+  <style>
+    .box {
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
 
 <div id="app">
-  <i-button :loading="loading1" @click="loading1 = !loading1">
-    默认
-  </i-button>
-  <i-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">
-    设置
-  </i-button>
-  <i-button icon="download" icon-position="left" :loading="loading3" @click="loading3 = !loading3">
-    下载
-  </i-button>
-  <i-button icon="upload" icon-position="right" :loading="loading4" @click="loading4 = !loading4">
-    上传
-  </i-button>
-  <i-button-group>
-    <i-button icon="left">上一页</i-button>
-    <i-button>更多</i-button>
-    <i-button>更多</i-button>
-    <i-button icon="right" icon-position="right">上一页</i-button>
-  </i-button-group>
+  <div class="box">
+    <i-input value="张三" disabled></i-input>
+    <i-input value="李四" readonly></i-input>
+    <i-input value="王五"></i-input>
+    <i-input value="王" error="姓名不能少于两个字"></i-input>
+  </div>
+
+  <div class="box">
+    <i-button :loading="loading1" @click="loading1 = !loading1">
+      默认
+    </i-button>
+    <i-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">
+      设置
+    </i-button>
+    <i-button icon="download" icon-position="left" :loading="loading3" @click="loading3 = !loading3">
+      下载
+    </i-button>
+    <i-button icon="upload" icon-position="right" :loading="loading4" @click="loading4 = !loading4">
+      上传
+    </i-button>
+    <i-button-group>
+      <i-button icon="left">上一页</i-button>
+      <i-button>更多</i-button>
+      <i-button>更多</i-button>
+      <i-button icon="right" icon-position="right">上一页</i-button>
+    </i-button-group>
+  </div>
 </div>
 
 <script src="src/app.js"></script>
