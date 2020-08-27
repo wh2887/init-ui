@@ -1,9 +1,14 @@
 <template>
   <div class="input-wrapper" :class="{error}">
     <label>
-      <input type="text" :value="value" :disabled="disabled" :readonly="readonly">
+      <input type="text" :value="value" :disabled="disabled" :readonly="readonly"
+             @change="$emit('change',$event)"
+             @input="$emit('input', $event)"
+             @focus="$emit('focus', $event)"
+             @blur="$emit('blur', $event)"
+      >
       <template v-if="error">
-        <Icon class="icon-error" icon-name="settings"></Icon>
+        <Icon class="icon-error" icon-name="error"></Icon>
         <span class="error-message">{{error}}</span>
       </template>
     </label>
@@ -63,7 +68,7 @@
       > label {
         > input { border-color: $red; }
 
-        .icon-error { fill: $red; }
+        .icon-error { fill: $red;}
 
         .error-message { color: $red; }
       }
