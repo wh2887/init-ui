@@ -40,7 +40,9 @@
 
 <div id="app">
   <div class="box">
-    <i-input @change="inputChange"></i-input>
+    <i-input v-model="message"></i-input>
+    <p>{{message}}</p>
+    <button @click="message += 1"> + 1</button>
   </div>
 
   <div class="box">
