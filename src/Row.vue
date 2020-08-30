@@ -13,7 +13,7 @@
       },
       align: {
         type: String,
-        variable(value) {
+        validator(value) {
           return ['left', 'right', 'center'].includes(value)
         }
       }
@@ -42,13 +42,16 @@
 <style lang="scss" scoped>
   .row {
     display: flex;
-    &.align-left{
+
+    &.align-left {
       justify-content: flex-start;
     }
-    &.align-right{
+
+    &.align-right {
       justify-content: flex-end;
     }
-    &.align-center{
+
+    &.align-center {
       justify-content: center;
     }
   }
