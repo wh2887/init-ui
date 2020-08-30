@@ -3,11 +3,15 @@ import Button from './Button'
 import Icon from './Icon'
 import ButtonGroup from './ButtonGroup'
 import Input from './Input'
+import Row from './Row'
+import Col from './Col'
 
 Vue.component('i-button', Button)
 Vue.component('i-icon', Icon)
 Vue.component('i-button-group', ButtonGroup)
 Vue.component('i-input', Input)
+Vue.component('i-row', Row)
+Vue.component('i-col', Col)
 
 new Vue({
   el: '#app',
