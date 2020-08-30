@@ -1,6 +1,6 @@
 <template>
-  <div class="col" :class="colClass" :style="colStyle" >
-      <slot></slot>
+  <div class="col" :class="colClass" :style="colStyle">
+    <slot></slot>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
       },
       offset: {
         type: [Number, String]
-      },
+      }
     },
     data() {
       return {
@@ -39,7 +39,6 @@
 
 <style lang="scss" scoped>
   .col {
-    width: 50%;
     $class-prefix: col-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
