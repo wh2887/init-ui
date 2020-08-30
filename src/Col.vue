@@ -20,11 +20,12 @@
     height: 50px;
     border: 1px solid #333333;
     background: #bbbbbb;
-
     $class: col-;
-    @for $i from 1 through 100 {
-      .#{$class}#{$i} {
-        background-color: darken(cornflowerblue, 0% + ($i / 2));
+    @for $n from 1 through 24 {
+
+      // for each $col_#{i}
+      &.#{$class}#{$n} {
+        width: ($n / 24)*100%;
       }
     }
   }
