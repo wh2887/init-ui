@@ -1,6 +1,7 @@
 <template>
   <div class="toast-wrapper">
     <slot></slot>
+    <span v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
   </div>
 </template>
 <script>
@@ -9,7 +10,61 @@
   //   console.log('$toast')
   // }
   export default {
-    name: 'InitToast'
+    name: 'InitToast',
+    props: {
+      autoClose: {
+        type: Boolean,
+        default: true
+      },
+      autoCloseDelay: {
+        type: Number,
+        default: 2
+      },
+      closeButton: {
+        type: Object,
+        default() {
+          return {
+            text: '关闭',
+            callback: undefined
+          }
+        }
+
+        // TODO
+        // prop 接收一个对象 如果直接写对象，会引发一个问题：
+        // 一个项目中有好几个地方都用到了这个组件，那么会被同时修改。
+        // 解决办法： 改成函数形式，return 一个对象。 看上面！
+        // default: {
+        //   text: '关闭',
+        //   callback: undefined
+        // }
+      }
+    },
+    mounted() {
+      this.execAutoClose()
+    },
+    methods: {
+      close() {
+        this.$el.remove()
+        this.$destroy()
+      },
+      execAutoClose() {
+        if (this.autoClose) {
+          setTimeout(() => {
+            this.close()
+          }, this.autoCloseDelay * 1000)
+        }
+      },
+      log() {
+        console.log('测试 Toast 中 onClickClose 事件的 callback')
+      },
+      onClickClose() {
+        this.close()
+        if (this.closeButton && typeof this.closeButton.callback === 'function') {
+          this.closeButton.callback(this)
+        }
+      },
+    }
+
   }
 </script>
 <style lang="scss" scoped>
