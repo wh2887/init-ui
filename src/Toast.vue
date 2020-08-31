@@ -1,10 +1,13 @@
 <template>
   <div class="toast-wrapper">
     <slot></slot>
-    <span v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+    <div class="toast-line"></div>
+    <span class="toast-close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
   </div>
 </template>
 <script>
+
+  // TODO
   // import Vue from 'vue'
   // Vue.prototype.$toast = function () {
   //   console.log('$toast')
@@ -55,7 +58,7 @@
         }
       },
       log() {
-        console.log('测试 Toast 中 onClickClose 事件的 callback')
+        console.log('测试 Toast 中 onClickClose 事件的 callback,如果要使用就传入 toast，然后toast.log()即可')
       },
       onClickClose() {
         this.close()
@@ -73,13 +76,14 @@
   $toast-bg: rgba(0, 0, 0, 0.75);
   $toast-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
   $toast-radius: 4px;
+  $space-between: 16px;
   .toast-wrapper {
     font-size: $font-size;
     height: $toast-height;
     line-height: 1.8em;
     background: $toast-bg;
     box-shadow: $toast-box-shadow;
-    padding: 0 16px;
+    padding: 0 $space-between;
     border-radius: $toast-radius;
     color: white;
     display: flex;
@@ -88,5 +92,15 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    .toast-line {
+      height: 100%;
+      border-left: 1px solid #666666;
+      margin-left: $space-between;
+    }
+
+    .toast-close {
+      padding-left: $space-between;
+    }
   }
 </style>

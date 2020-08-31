@@ -40,13 +40,6 @@ new Vue({
     showToast() {
       this.$toast('I am toast', {
         autoCloseDelay: 60,
-        closeButton: {
-          text: '知道了',
-          callback: function (toast) {
-            toast.log()
-            console.log('用户说他知道了')
-          }
-        }
       })
 
     }
