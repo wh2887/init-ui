@@ -1,8 +1,10 @@
 <template>
-  <div class="toast-wrapper">
-    <slot></slot>
-    <div class="toast-line"></div>
-
+  <div class="toast-wrapper" ref="wrapper">
+    <div class="toast-message">
+      <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default[0]"></div>
+    </div>
+    <div class="toast-line" ref="line"></div>
     <span class="toast-close" @click="onClickClose">
       {{closeButton.text}}
     </span>
@@ -24,7 +26,7 @@
       },
       autoCloseDelay: {
         type: Number,
-        default: 2
+        default: 60
       },
       closeButton: {
         type: Object,
@@ -44,14 +46,25 @@
         //   callback: undefined
         // }
       },
+      enableHtml: {
+        type: Boolean,
+        default: false
+      }
     },
     mounted() {
+      this.updateStyles()
       this.execAutoClose()
     },
     methods: {
       close() {
         this.$el.remove()
         this.$destroy()
+      },
+      updateStyles() {
+        this.$nextTick(() => {
+          this.$refs.line.style.height =
+            `${this.$refs.wrapper.getBoundingClientRect().height}px`
+        })
       },
       execAutoClose() {
         if (this.autoClose) {
@@ -74,14 +87,14 @@
 </script>
 <style lang="scss" scoped>
   $font-size: 14px;
-  $toast-height: 40px;
+  $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, 0.75);
   $toast-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
   $toast-radius: 4px;
   $space-between: 16px;
   .toast-wrapper {
     font-size: $font-size;
-    height: $toast-height;
+    min-height: $toast-min-height;
     line-height: 1.8em;
     background: $toast-bg;
     box-shadow: $toast-box-shadow;
@@ -95,6 +108,10 @@
     left: 50%;
     transform: translateX(-50%);
 
+    .toast-message {
+      padding: $space-between/2 0;
+    }
+
     .toast-line {
       height: 100%;
       border-left: 1px solid #666666;
@@ -103,6 +120,7 @@
 
     .toast-close {
       padding-left: $space-between;
+      flex-shrink: 0;
     }
   }
 </style>

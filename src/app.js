@@ -36,12 +36,14 @@ new Vue({
     loading4: false,
     message: 'hi'
   },
+  created() {
+    this.showToast()
+  },
   methods: {
     showToast() {
-      this.$toast('I am toast', {
-        autoClose: false,
+      this.$toast(' message ', {
+        enableHtml: false
       })
-
     }
   }
 })
