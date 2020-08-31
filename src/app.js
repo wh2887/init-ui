@@ -42,7 +42,8 @@ new Vue({
         autoCloseDelay: 60,
         closeButton: {
           text: '知道了',
-          callback: function () {
+          callback: function (toast) {
+            toast.log()
             console.log('用户说他知道了')
           }
         }
