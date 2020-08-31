@@ -71,7 +71,7 @@
       }
     }
 
-    @media (min-width: 577px) and (max-width: 768px) {
+    @media (min-width: 577px) {
       $class-prefix: col-ipad-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -85,7 +85,7 @@
         }
       }
     }
-    @media (min-width: 769px) and (max-width: 992px) {
+    @media (min-width: 769px) {
       $class-prefix: col-narrow-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -99,7 +99,7 @@
         }
       }
     }
-    @media (min-width: 993px) and (max-width: 1200px) {
+    @media (min-width: 993px) {
       $class-prefix: col-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {

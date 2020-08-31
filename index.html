@@ -34,6 +34,12 @@
     .box {
       margin: 20px;
     }
+
+    .demo {
+      height: 50px;
+      border: 1px solid #bbbbbb;
+      background: #666666;
+    }
   </style>
 </head>
 <body>
@@ -41,36 +47,26 @@
 <div id="app">
 
   <div class="box" style="border: 1px solid black;">
-    <i-row gutter="20">
-      <i-col span="24"
-             :ipad="{span:8}"
-             :narrow-pc="{span:4}"
-             :pc="{span:2}"
-             :wide-pc="{span:1}"
-      >
-        1
+    <i-row>
+      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo">1</div>
       </i-col>
-      <i-col span="24"
-             :ipad="{span:16}"
-             :narrow-pc="{span:20}"
-             :pc="{span:22}"
-             :wide-pc="{span:23}"
-      >11
+      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo">2</div>
+      </i-col>
+      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo">3</div>
+      </i-col>
+      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo">4</div>
+      </i-col>
+      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo">5</div>
+      </i-col>
+      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo">6</div>
       </i-col>
     </i-row>
-
-    <i-row gutter="20">
-      <i-col span="4">1</i-col>
-      <i-col span="20">2</i-col>
-    </i-row>
-
-    <i-row gutter="10">
-      <i-col span="6">1</i-col>
-      <i-col span="10" offset="2">2</i-col>
-      <i-col span="3">3</i-col>
-      <i-col span="1" offset="2">4</i-col>
-    </i-row>
-
   </div>
 
 
