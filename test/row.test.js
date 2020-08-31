@@ -48,7 +48,7 @@ describe('Row', (done) => {
       }
     }).$mount(div)
     const element = vm.$el
-    expect(getComputedStyle(element).justifyContent).to.eq('flex-nd')
+    expect(getComputedStyle(element).justifyContent).to.eq('flex-end')
     vm.$el.remove()
     vm.$destroy()
   })
