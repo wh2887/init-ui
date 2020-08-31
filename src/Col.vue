@@ -17,7 +17,7 @@
   }
 
   export default {
-    name: 'initCol',
+    name: 'InitCol',
     props: {
       span: {
         type: [Number, String]

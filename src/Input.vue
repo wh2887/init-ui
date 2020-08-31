@@ -20,7 +20,7 @@
   import Icon from './Icon'
 
   export default {
-    name: 'Input',
+    name: 'InitInput',
     components: {Icon},
     props: {
       value: {

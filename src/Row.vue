@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'initRow',
+    name: 'InitRow',
     props: {
       gutter: {
         type: [Number, String]

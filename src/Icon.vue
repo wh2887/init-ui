@@ -8,7 +8,7 @@
   import './svg.js'
 
   export default {
-    name: 'Icon',
+    name: 'InitIcon',
     props: ['iconName']
   }
 </script>

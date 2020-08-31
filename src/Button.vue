@@ -17,7 +17,7 @@
     components: {
       'i-icon': Icon
     },
-    name: 'Button',
+    name: 'InitButton',
     props: {
       icon: {},
       loading: {

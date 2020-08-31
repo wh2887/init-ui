@@ -28,82 +28,25 @@
     body {
       font-size: var(--font-size);
     }
-
   </style>
   <style>
-    .box {
-      margin: 20px;
-    }
-
     .demo {
-      height: 50px;
+      min-height: 100px;
       border: 1px solid #bbbbbb;
       background: #666666;
     }
   </style>
 </head>
 <body>
-
 <div id="app">
-
-  <div class="box" style="border: 1px solid black;">
-    <i-row>
-      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-        <div class="demo">1</div>
-      </i-col>
-      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-        <div class="demo">2</div>
-      </i-col>
-      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-        <div class="demo">3</div>
-      </i-col>
-      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-        <div class="demo">4</div>
-      </i-col>
-      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-        <div class="demo">5</div>
-      </i-col>
-      <i-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
-        <div class="demo">6</div>
-      </i-col>
-    </i-row>
-  </div>
-
-
-  <hr>
-  <div class="box">
-    <i-input v-model="message"></i-input>
-    <p>{{message}}</p>
-    <button @click="message += 1"> + 1</button>
-  </div>
-
-  <div class="box">
-    <i-input value="张三" disabled></i-input>
-    <i-input value="李四" readonly></i-input>
-    <i-input value="王五"></i-input>
-    <i-input value="王" error="姓名不能少于两个字"></i-input>
-  </div>
-
-  <div class="box">
-    <i-button :loading="loading1" @click="loading1 = !loading1">
-      默认
-    </i-button>
-    <i-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">
-      设置
-    </i-button>
-    <i-button icon="download" icon-position="left" :loading="loading3" @click="loading3 = !loading3">
-      下载
-    </i-button>
-    <i-button icon="upload" icon-position="right" :loading="loading4" @click="loading4 = !loading4">
-      上传
-    </i-button>
-    <i-button-group>
-      <i-button icon="left">上一页</i-button>
-      <i-button>更多</i-button>
-      <i-button>更多</i-button>
-      <i-button icon="right" icon-position="right">上一页</i-button>
-    </i-button-group>
-  </div>
+  <i-layout style="height: 100vh">
+    <i-sider class="demo" style="width: 200px">sider</i-sider>
+    <i-layout>
+      <i-header class="demo">header</i-header>
+      <i-content class="demo">content</i-content>
+      <i-footer class="demo">footer</i-footer>
+    </i-layout>
+  </i-layout>
 </div>
 
 <script src="src/app.js"></script>
