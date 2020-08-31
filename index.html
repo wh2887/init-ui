@@ -29,24 +29,10 @@
       font-size: var(--font-size);
     }
   </style>
-  <style>
-    .demo {
-      min-height: 100px;
-      border: 1px solid #bbbbbb;
-      background: #666666;
-    }
-  </style>
 </head>
 <body>
 <div id="app">
-  <i-layout style="height: 100vh">
-    <i-sider class="demo" style="width: 200px">sider</i-sider>
-    <i-layout>
-      <i-header class="demo">header</i-header>
-      <i-content class="demo">content</i-content>
-      <i-footer class="demo">footer</i-footer>
-    </i-layout>
-  </i-layout>
+  <button @click="showToast"> 点我 </button>
 </div>
 
 <script src="src/app.js"></script>
