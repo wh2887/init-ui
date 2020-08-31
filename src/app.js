@@ -39,7 +39,7 @@ new Vue({
   methods: {
     showToast() {
       this.$toast('I am toast', {
-        autoCloseDelay: 60,
+        autoClose: false,
       })
 
     }

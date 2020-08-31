@@ -1,8 +1,14 @@
 <template>
   <div class="toast-wrapper">
-    <slot></slot>
+    <div class="toast-message">
+      <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default[0]"></div>
+    </div>
     <div class="toast-line"></div>
-    <span class="toast-close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+
+    <span class="toast-close" @click="onClickClose">
+      {{closeButton.text}}
+    </span>
   </div>
 </template>
 <script>
@@ -28,7 +34,7 @@
         default() {
           return {
             text: '关闭',
-            callback: undefined
+            callback: ''
           }
         }
 
@@ -40,34 +46,37 @@
         //   text: '关闭',
         //   callback: undefined
         // }
+      },
+      enableHtml: {
+        type: Boolean,
+        default: false
+      },
+    },
+      mounted() {
+        this.execAutoClose()
+      },
+      methods: {
+        close() {
+          this.$el.remove()
+          this.$destroy()
+        },
+        execAutoClose() {
+          if (this.autoClose) {
+            setTimeout(() => {
+              this.close()
+            }, this.autoCloseDelay * 1000)
+          }
+        },
+        log() {
+          console.log('测试 Toast 中 onClickClose 事件的 callback,如果要使用就传入 toast，然后toast.log()即可')
+        },
+        onClickClose() {
+          this.close()
+          if (this.closeButton && typeof this.closeButton.callback === 'function') {
+            this.closeButton.callback(this)
+          }
+        }
       }
-    },
-    mounted() {
-      this.execAutoClose()
-    },
-    methods: {
-      close() {
-        this.$el.remove()
-        this.$destroy()
-      },
-      execAutoClose() {
-        if (this.autoClose) {
-          setTimeout(() => {
-            this.close()
-          }, this.autoCloseDelay * 1000)
-        }
-      },
-      log() {
-        console.log('测试 Toast 中 onClickClose 事件的 callback,如果要使用就传入 toast，然后toast.log()即可')
-      },
-      onClickClose() {
-        this.close()
-        if (this.closeButton && typeof this.closeButton.callback === 'function') {
-          this.closeButton.callback(this)
-        }
-      },
-    }
-
   }
 </script>
 <style lang="scss" scoped>
@@ -92,6 +101,9 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    .toast-message {
+    }
 
     .toast-line {
       height: 100%;
