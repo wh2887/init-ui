@@ -1,9 +1,6 @@
 <template>
   <div class="toast-wrapper">
-    <div class="toast-message">
-      <slot v-if="!enableHtml"></slot>
-      <div v-else v-html="$slots.default[0]"></div>
-    </div>
+    <slot></slot>
     <div class="toast-line"></div>
 
     <span class="toast-close" @click="onClickClose">
@@ -34,7 +31,7 @@
         default() {
           return {
             text: '关闭',
-            callback: ''
+            callback: undefined
           }
         }
 
@@ -47,36 +44,32 @@
         //   callback: undefined
         // }
       },
-      enableHtml: {
-        type: Boolean,
-        default: false
-      },
     },
-      mounted() {
-        this.execAutoClose()
+    mounted() {
+      this.execAutoClose()
+    },
+    methods: {
+      close() {
+        this.$el.remove()
+        this.$destroy()
       },
-      methods: {
-        close() {
-          this.$el.remove()
-          this.$destroy()
-        },
-        execAutoClose() {
-          if (this.autoClose) {
-            setTimeout(() => {
-              this.close()
-            }, this.autoCloseDelay * 1000)
-          }
-        },
-        log() {
-          console.log('测试 Toast 中 onClickClose 事件的 callback,如果要使用就传入 toast，然后toast.log()即可')
-        },
-        onClickClose() {
-          this.close()
-          if (this.closeButton && typeof this.closeButton.callback === 'function') {
-            this.closeButton.callback(this)
-          }
+      execAutoClose() {
+        if (this.autoClose) {
+          setTimeout(() => {
+            this.close()
+          }, this.autoCloseDelay * 1000)
+        }
+      },
+      log() {
+        console.log('测试 Toast 中 onClickClose 事件的 callback,如果要使用就传入 toast，然后toast.log()即可')
+      },
+      onClickClose() {
+        this.close()
+        if (this.closeButton && typeof this.closeButton.callback === 'function') {
+          this.closeButton.callback(this)
         }
       }
+    }
   }
 </script>
 <style lang="scss" scoped>
@@ -101,9 +94,6 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-
-    .toast-message {
-    }
 
     .toast-line {
       height: 100%;
