@@ -29,7 +29,7 @@
       },
       autoCloseDelay: {
         type: Number,
-        default: 60
+        default: 5
       },
       closeButton: {
         type: Object,
@@ -116,10 +116,12 @@
     0% {opacity: 0; transform: translateY(-100%);}
     100% {opacity: 1;transform: translateY(0%);}
   }
+
   @keyframes fade-in {
     0% {opacity: 0; }
     100% {opacity: 1;}
   }
+
   @keyframes slide-up {
     0% {opacity: 0;transform: translateY(100%)}
     100% {opacity: 1;transform: translateY(0%)}
@@ -132,7 +134,8 @@
 
     &.position-top {
       top: 0;
-      .toast-wrapper{
+
+      .toast-wrapper {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         animation: slide-down $animation-duration;
@@ -147,7 +150,8 @@
 
     &.position-bottom {
       bottom: 0;
-      .toast-wrapper{
+
+      .toast-wrapper {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         animation: slide-up $animation-duration;
