@@ -38,11 +38,11 @@ new Vue({
   },
   created() {
   },
+  position: 'bottom',
   methods: {
     showToast() {
-      this.$toast(' message ', {
+      this.$toast(`message${parseInt(Math.random()* 100) }`, {
         enableHtml: false,
-        position: 'bottom',
       })
     }
   }
