@@ -27,8 +27,11 @@ describe('Row', () => {
     })
     setTimeout(() => {
       const row = vm.$el.querySelector('.row')
-      console.log(row)
-      console.log(`row中的marginLeft:==== ： ${getComputedStyle(row).marginLeft}`)
+      expect(getComputedStyle(row).marginLeft).to.eq('-10px')
+      expect(getComputedStyle(row).marginRight).to.eq('-10px')
+      const cols = vm.$el.querySelectorAll('.col')
+      expect(getComputedStyle(cols[0]).paddingLeft).to.eq('10px')
+      expect(getComputedStyle(cols[0]).paddingRight).to.eq('10px')
       done()
       vm.$el.remove()
       vm.$destroy()
