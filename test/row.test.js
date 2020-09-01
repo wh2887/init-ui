@@ -15,6 +15,7 @@ describe('Row', () => {
     Vue.component('i-row', Row)
     Vue.component('i-col', Col)
     const div = document.createElement('div')
+    document.body.appendChild(div)
     div.innerHTML = `
       <i-row gutter="20">
         <i-col span="12"></i-col>

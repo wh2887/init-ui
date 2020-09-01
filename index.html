@@ -29,12 +29,27 @@
       font-size: var(--font-size);
     }
   </style>
+  <style>
+    .demoF{
+      position: fixed;
+      top: 0;
+      left: 50%;
+    }
+    .demo{
+      background: #666666;
+      border: 1px solid #333333;
+      height: 100px;
+    }
+  </style>
 </head>
 <body>
 <div id="app">
-  <button @click="showToast1"> top</button>
-  <button @click="showToast2"> middle</button>
-  <button @click="showToast3"> bottom</button>
+  
+  <i-row gutter="100" style="width: 100vw" class="demoF">
+    <i-col class="demo">1</i-col>
+    <i-col class="demo">2</i-col>
+  </i-row>
+
 </div>
 
 <script src="src/app.js"></script>
