@@ -107,7 +107,13 @@
   $toast-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
   $toast-radius: 4px;
   $space-between: 16px;
+  @keyframes fade-in {
+    0% {opacity: 0;transform: translateY(100%)}
+    100% {opacity: 1;transform: translateY(0%)}
+  }
+
   .toast-wrapper {
+    animation: fade-in 1s;
     font-size: $font-size;
     min-height: $toast-min-height;
     line-height: 1.8em;

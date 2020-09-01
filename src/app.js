@@ -41,8 +41,9 @@ new Vue({
   position: 'bottom',
   methods: {
     showToast() {
-      this.$toast(`message${parseInt(Math.random()* 100) }`, {
+      this.$toast(`message${parseInt(Math.random() * 100)}`, {
         enableHtml: false,
+        position: 'bottom'
       })
     }
   }
