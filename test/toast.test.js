@@ -11,6 +11,23 @@ describe('Toast', () => {
   })
 
   describe('props', () => {
+    it('接收 autoClose', (done) => {
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      const Constructor = Vue.extend(Toast)
+      const vm = new Constructor({
+        propsData: {
+          autoClose: true,
+          autoCloseDelay: 1
+        }
+      }).$mount(div)
+      vm.$on('beforeClose', () => {
+        expect(document.body.contains(vm.$el)).to.eq(false)
+        done()
+        vm.$el.remove()
+        vm.$destroy()
+      })
+    })
   })
 
 
