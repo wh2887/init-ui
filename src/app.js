@@ -29,21 +29,19 @@ Vue.use(plugin)
 
 new Vue({
   el: '#app',
-  data: {
-    loading1: true,
-    loading2: false,
-    loading3: true,
-    loading4: false,
-    message: 'hi'
-  },
+  data: {},
   created() {
   },
   position: 'bottom',
   methods: {
-    showToast() {
+    showToast1(){ this.showToast('top') },
+    showToast2(){ this.showToast('middle') },
+    showToast3(){ this.showToast('bottom') },
+
+    showToast(position) {
       this.$toast(`message${parseInt(Math.random() * 100)}`, {
         enableHtml: false,
-        position: 'bottom'
+        position: position
       })
     }
   }
