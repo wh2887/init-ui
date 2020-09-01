@@ -15,11 +15,6 @@
 
 <script>
 
-  // TODO
-  // import Vue from 'vue'
-  // Vue.prototype.$toast = function () {
-  //   console.log('$toast')
-  // }
   export default {
     name: 'InitToast',
     props: {
@@ -40,15 +35,6 @@
             callback: undefined
           }
         }
-
-        // TODO
-        // prop 接收一个对象 如果直接写对象，会引发一个问题：
-        // 一个项目中有好几个地方都用到了这个组件，那么会被同时修改。
-        // 解决办法： 改成函数形式，return 一个对象。 看上面！
-        // default: {
-        //   text: '关闭',
-        //   callback: undefined
-        // }
       },
       enableHtml: {
         type: Boolean,

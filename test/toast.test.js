@@ -9,7 +9,6 @@ describe('Toast', () => {
   it('存在', () => {
     expect(Toast).to.be.exist
   })
-
   describe('props', () => {
     it('接收 autoClose', (done) => {
       const div = document.createElement('div')
@@ -27,7 +26,6 @@ describe('Toast', () => {
         vm.$destroy()
       })
     })
-
     it('接收 closeButton', () => {
       const callback = sinon.fake()
       const Constructor = Vue.extend(Toast)
@@ -45,7 +43,6 @@ describe('Toast', () => {
       expect(callback).to.have.been.called
 
     })
-
     it('接收 enableHtml', () => {
       const Constructor = Vue.extend(Toast)
       const vm = new Constructor({
@@ -58,7 +55,6 @@ describe('Toast', () => {
       let strong = vm.$el.querySelector('#test1234')
       expect(strong).to.exist
     })
-
     it('接收 position', () => {
       const Constructor = Vue.extend(Toast)
       const vm = new Constructor({
@@ -68,7 +64,6 @@ describe('Toast', () => {
       }).$mount()
       expect(vm.$el.classList.contains('position-bottom')).to.eq(true)
     })
-
   })
 
 

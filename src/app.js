@@ -34,14 +34,27 @@ new Vue({
   },
   position: 'bottom',
   methods: {
-    showToast1(){ this.showToast('top') },
-    showToast2(){ this.showToast('middle') },
-    showToast3(){ this.showToast('bottom') },
+    showToast1() {
+      this.showToast('top')
+    },
+    showToast2() {
+      this.showToast('middle')
+    },
+    showToast3() {
+      this.showToast('bottom')
+    },
 
     showToast(position) {
       this.$toast(`message${parseInt(Math.random() * 100)}`, {
         enableHtml: false,
-        position: position
+        position: position,
+        closeButton: {
+          text: '充值',
+          callback: () => {
+            console.log('充值成功')
+          }
+        },
+        onClose
       })
     }
   }
