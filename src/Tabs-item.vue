@@ -46,6 +46,9 @@
 <style lang="scss" scoped>
   .tabs-item-wrapper {
     padding: 0 2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     &.active {
       background: red;
     }
