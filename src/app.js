@@ -12,6 +12,11 @@ import Footer from './Footer'
 import Sider from './Sider'
 import Toast from './Toast'
 import plugin from './plugin'
+import Tabs from './Tabs'
+import TabsBody from './Tabs-body'
+import TabsHead from './Tabs-head'
+import TabsItem from './Tabs-item'
+import TabsPane from './Tabs-pane'
 
 Vue.component('i-button', Button)
 Vue.component('i-icon', Icon)
@@ -26,6 +31,11 @@ Vue.component('i-footer', Footer)
 Vue.component('i-sider', Sider)
 Vue.component('i-toast', Toast)
 Vue.use(plugin)
+Vue.component('i-tabs', Tabs)
+Vue.component('i-tabs-head', TabsHead)
+Vue.component('i-tabs-body', TabsBody)
+Vue.component('i-tabs-item', TabsItem)
+Vue.component('i-tabs-pane', TabsPane)
 
 new Vue({
   el: '#app',
@@ -34,16 +44,6 @@ new Vue({
   },
   position: 'bottom',
   methods: {
-    showToast1() {
-      this.showToast('top')
-    },
-    showToast2() {
-      this.showToast('middle')
-    },
-    showToast3() {
-      this.showToast('bottom')
-    },
-
     showToast(position) {
       this.$toast(`message${parseInt(Math.random() * 100)}`, {
         enableHtml: false,
@@ -54,7 +54,6 @@ new Vue({
             console.log('充值成功')
           }
         },
-        onClose
       })
     }
   }
