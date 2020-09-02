@@ -6,7 +6,10 @@
 
 <script>
   export default {
-    name: 'InitTabsBody'
+    name: 'InitTabsBody',
+    inject: ['eventBus'],
+    created() {
+    }
   }
 </script>
 

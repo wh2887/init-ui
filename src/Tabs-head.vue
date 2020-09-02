@@ -9,7 +9,11 @@
 
 <script>
   export default {
-    name: 'InitTabsHead'
+    name: 'InitTabsHead',
+    inject: ['eventBus'],
+    created() {
+    }
+
   }
 </script>
 

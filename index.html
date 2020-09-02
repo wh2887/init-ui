@@ -32,9 +32,12 @@
 </head>
 <body>
 <div id="app">
-  <i-tabs selected="sports">
+  <i-tabs selected="selectedTab" @xxx=" selectedTab = $event" @update:selected="yyy">
     <i-tabs-head>
-      <i-tabs-item name='sports'> <i-icon icon-name="settings"></i-icon> 体育</i-tabs-item>
+      <i-tabs-item name='sports'>
+        <i-icon icon-name="settings"></i-icon>
+        体育
+      </i-tabs-item>
       <i-tabs-item name='finance'>财经</i-tabs-item>
       <i-tabs-item name='military'>军事</i-tabs-item>
       <template slot="actions">

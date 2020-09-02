@@ -39,11 +39,17 @@ Vue.component('i-tabs-pane', TabsPane)
 
 new Vue({
   el: '#app',
-  data: {},
+  data: {
+    selectedTab: 'sports'
+  },
   created() {
   },
   position: 'bottom',
   methods: {
+    yyy(value) {
+      console.log('yyy')
+      console.log(value)
+    },
     showToast(position) {
       this.$toast(`message${parseInt(Math.random() * 100)}`, {
         enableHtml: false,
