@@ -9,6 +9,10 @@
     name: 'InitTabsItem',
     inject: ['eventBus'],
     props: {
+      disable: {
+        type: Boolean,
+        default: false
+      },
       name: {
         type: [String, Number],
         required: true   // 必须给 item 一个 name
