@@ -12,9 +12,11 @@
   export default {
     name: 'InitTabsHead',
     inject: ['eventBus'],
-    created() {
-      this.eventBus.$on('update:selected', (itemName,vm) => {
-        console.log(itemName,vm.$el)
+    mounted() {
+      this.eventBus.$on('update:selected', (itemName, vm) => {
+        let {width, left} = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.width = `${width}px`
+        this.$refs.line.style.left = `${left}px`
       })
     }
 
@@ -24,22 +26,27 @@
 <style lang="scss" scoped>
   $blue: blue;
   $tab-height: 40px;
+  $border-color: #ddd;
   .tabs-head-wrapper {
     display: flex;
     height: $tab-height;
     justify-content: flex-start;
     position: relative;
+    border-bottom: 1px solid $border-color;
 
     > .line {
       position: absolute;
       bottom: 0;
       border-bottom: 1px solid $blue;
-      width: 100px;
+      transition: all 350ms;
     }
 
     > .actions-wrapper {
       margin-left: auto;
-      margin-right: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:0 1em;
     }
 
 
