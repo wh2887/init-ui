@@ -32,7 +32,7 @@
 </head>
 <body>
 <div id="app">
-  <i-tabs selected="selectedTab" @xxx=" selectedTab = $event" @update:selected="yyy">
+  <i-tabs :selected.sync="selectedTab"  @update:selected="yyy">
     <i-tabs-head>
       <i-tabs-item name='sports'>
         <i-icon icon-name="settings"></i-icon>

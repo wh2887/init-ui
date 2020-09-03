@@ -40,14 +40,13 @@ Vue.component('i-tabs-pane', TabsPane)
 new Vue({
   el: '#app',
   data: {
-    selectedTab: 'sports'
+    selectedTab: 'finance'
   },
   created() {
   },
   position: 'bottom',
   methods: {
     yyy(value) {
-      console.log('yyy')
       console.log(value)
     },
     showToast(position) {
