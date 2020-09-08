@@ -44,8 +44,7 @@ new Vue({
   data: {
     selectedTab: 'finance'
   },
-  created() {
-  },
+  created() {},
   position: 'bottom',
   methods: {
     yyy(value) {
