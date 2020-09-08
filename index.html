@@ -34,13 +34,25 @@
 <div id="app">
 
   <div style="overflow: hidden;padding-top: 50px">
-    <i-popover>
+    <i-popover position="bottom">
       <template slot="content">
         <div>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssin</div>
       </template>
       <i-button>点我</i-button>
     </i-popover>
-    <i-popover>
+    <i-popover position="top">
+      <template slot="content">
+        <div>点击才出现的 popover 内容</div>
+      </template>
+      <i-button>点我</i-button>
+    </i-popover>
+    <i-popover position="left">
+      <template slot="content">
+        <div>点击才出现的 popover 内容</div>
+      </template>
+      <i-button>点我</i-button>
+    </i-popover>
+    <i-popover position="right">
       <template slot="content">
         <div>点击才出现的 popover 内容</div>
       </template>
