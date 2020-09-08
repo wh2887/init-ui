@@ -38,7 +38,7 @@
       selectTab () {
         this.$children.forEach((vm) => {
           if (vm.$options.name === 'InitTabsHead') {
-            vm.$childiren.forEach((childVm) => {
+            vm.$children.forEach((childVm) => {
               if (childVm.$options.name === 'InitTabsItem'
                 && childVm.name === this.selected) {
                 this.eventBus.$emit('update:selected', this.selected, childVm)

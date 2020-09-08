@@ -3,7 +3,7 @@
   <div class="popover" ref="popover">
     <div class="content-wrapper" ref="contentWrapper" v-if="visible"
          :class="{[`position-${position}`]:true}">
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" class="trigger-wrapper">
       <slot></slot>
@@ -14,28 +14,29 @@
 <script>
   export default {
     name: 'InitPopover',
-    data() {
-      return {
-        visible: false
-      }
-    },
     props: {
       position: {
         type: String,
         default: 'top',
         validator(value) {
-          return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
+          return ['top', 'bottom', 'left', 'right'].indexOf(value) >= -1
         }
       },
       trigger: {
         type: String,
         default: 'click',
         validator(value) {
-          return ['click', 'hover'].indexOf(value) >= 0
+          return ['click', 'hover'].indexOf(value) >= -1
         }
       },
     },
-    mounted () {
+    data() {
+      return {
+        visible: false
+      }
+    },
+
+    mounted() {
       if (this.trigger === 'click') {
         this.$refs.popover.addEventListener('click', this.onClick)
       } else {
@@ -43,30 +44,30 @@
         this.$refs.popover.addEventListener('mouseleave', this.close)
       }
     },
-      destroyed () {
+    destroyed() {
+      if (this.trigger === 'click') {
+        this.$refs.popover.removeEventListener('click', this.onClick)
+      } else {
+        this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover.removeEventListener('mouseleave', this.close)
+      }
+    },
+    computed: {
+      openEvent() {
         if (this.trigger === 'click') {
-          this.$refs.popover.removeEventListener('click', this.onClick)
+          return 'click'
         } else {
-          this.$refs.popover.removeEventListener('mouseenter', this.open)
-          this.$refs.popover.removeEventListener('mouseleave', this.close)
+          return 'mouseenter'
         }
       },
-      computed: {
-        openEvent () {
-          if (this.trigger === 'click') {
-            return 'click'
-          } else {
-            return 'mouseenter'
-          }
-        },
-        closeEvent () {
-          if (this.trigger === 'click') {
-            return 'click'
-          } else {
-            return 'mouseleave'
-          }
+      closeEvent() {
+        if (this.trigger === 'click') {
+          return 'click'
+        } else {
+          return 'mouseleave'
         }
-      },
+      }
+    },
 
     methods: {
       positionContent() {
@@ -106,6 +107,7 @@
       },
       close() {
         this.visible = false
+        console.log('执行了close')
         document.removeEventListener('click', this.onClickDocument)
       },
       onClick(event) {
@@ -213,26 +215,29 @@
       }
     }
 
-      &.position-right {
-        margin-left: 10px;
+    &.position-right {
+      margin-left: 10px;
 
-        &::before, &::after {
-          transform: translateY(-50%);
-          top: 50%;
-        }
-        &::before {
-          border-right-color: black;
-          border-left: none;
-          right: 100%;
-        }
-        &::after {
-          border-right-color: white;
-          border-left: none;
-          right: calc(100% - 1px);
-        }
+      &::before, &::after {
+        transform: translateY(-50%);
+        top: 50%;
       }
 
+      &::before {
+        border-right-color: black;
+        border-left: none;
+        right: 100%;
+      }
+
+      &::after {
+        border-right-color: white;
+        border-left: none;
+        right: calc(100% - 1px);
+      }
+    }
+
   }
+
   .trigger-wrapper {
     display: inline-block;
   }

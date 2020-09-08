@@ -33,7 +33,7 @@
 <body>
 <div id="app">
 
-  <div style="overflow: hidden;padding-top: 50px">
+  <div style="overflow: hidden;padding-top: 150px">
     <i-popover position="bottom">
       <template slot="content">
         <div>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssin</div>
@@ -42,7 +42,8 @@
     </i-popover>
     <i-popover position="top">
       <template slot="content">
-        <div>点击才出现的 popover 内容</div>
+        <div>点击才出现的 popover 内容 <a href="https://baidu.com">跳转百度</a></div>
+        <i-button @click="close">关闭</i-button>
       </template>
       <i-button>点我</i-button>
     </i-popover>
@@ -68,8 +69,9 @@
     <i-button>点我</i-button>
   </i-popover>
   <i-popover position="top" trigger="hover">
-    <template slot="content">
-      <div>点击才出现的 popover 内容</div>
+    <template slot="content" slot-scope="{close}">
+      <div>点击才出现的 popover 内容 <a href="https://baidu.com">跳转百度</a></div>
+      <i-button @click="close">关闭</i-button>
     </template>
     <i-button>点我</i-button>
   </i-popover>

@@ -43,11 +43,11 @@ describe('Tabs', () => {
         el: div
       })
 
-      setTimeout(() => {
+      vm.$nextTick(() => {
         let x = vm.$el.querySelector(`.tabs-item-wrapper[data-name="sports"]`)
         expect(x.classList.contains('active')).to.be.true
         done()
-      }, 1500)
+      })
     })
 
     it('可以接受 direction prop', () => {
