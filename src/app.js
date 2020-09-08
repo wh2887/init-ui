@@ -46,7 +46,7 @@ Vue.component('i-collapse-item', CollapseItem)
 new Vue({
   el: '#app',
   data: {
-    selectedTab: 'finance'
+    selectedTab: ['2','1']
   },
   created() {},
   position: 'bottom',
