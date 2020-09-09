@@ -1,4 +1,5 @@
 module.exports = {
+  base:'/init-ui/',
   title: 'Init UI',
   description: '一个好用的 UI 框架',
   themeConfig: {
@@ -17,7 +18,15 @@ module.exports = {
       },
       {
         title: '组件',
-        children: ['/components/button'],
+        children: [
+          '/components/button',
+          '/components/grid',
+          '/components/input',
+          '/components/layout',
+          '/components/popover',
+          '/components/tabs',
+          '/components/toast',
+        ],
       }
     ],
   }

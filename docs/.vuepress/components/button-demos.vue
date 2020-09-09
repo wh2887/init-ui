@@ -4,9 +4,7 @@
     <i-button icon="settings">默认按钮</i-button>
     <i-button :loading="true">默认按钮</i-button>
     <i-button disabled>默认按钮</i-button>
-    <pre>
-    <code> {{content}} </code>
-  </pre>
+    <pre><code>{{content}}</code></pre>
   </div>
 
 </template>
@@ -25,7 +23,7 @@
             <i-button icon="settings">默认按钮</i-button>
             <i-button :loading="true">默认按钮</i-button>
             <i-button disabled>默认按钮</i-button>
-        `,
+        `.replace(/\t+| +/g,'').trim(),
       }
     }
   }
