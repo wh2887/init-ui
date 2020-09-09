@@ -3,6 +3,7 @@ module.exports = {
   title: 'Init UI',
   description: '一个好用的 UI 框架',
   themeConfig: {
+    displayAllHeaders: true,
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/guide/' },
