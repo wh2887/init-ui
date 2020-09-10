@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>init UI</title>
-
   <style>
     * {
       margin: 0;
@@ -22,23 +21,36 @@
       --border-color-hover: #666;
     }
 
-    #app {
-    }
+    .response-wrapper { padding-top: 10px;
 
-    body {
-      font-size: var(--font-size);
     }
+     .item { text-align: center; color: white;}
+     span { display: block; background: #3eaf7c; }
+
   </style>
 </head>
 <body>
 <div id="app" style="padding: 20px">
-
-  <i-collapse  :selected.sync="selectedTab" single>
-    <i-collapse-item title="标题1" name="1">内容1</i-collapse-item>
-    <i-collapse-item title="标题2" name="2">内容2</i-collapse-item>
-    <i-collapse-item title="标题3" name="3">内容3</i-collapse-item>
-  </i-collapse>
-  {{selectedTab}}
+  <div class="response-wrapper">
+    <i-row>
+      <i-col span="24" class="item"
+             :ipad="{span:8}"
+             :narrow-pc="{span:4}"
+             :pc="{span: 2}"
+             :wide-pc="{span:1}"
+      >
+     <span>col</span>
+      </i-col>
+      <i-col span="24" class="item"
+             :ipad="{span:16}"
+             :narrow-pc="{span:20}"
+             :pc="{span: 20,offset:2}"
+             :wide-pc="{span:21}"
+      >
+        <span>col</span>
+      </i-col>
+    </i-row>
+  </div>
 </div>
 
 <script src="src/app.js"></script>

@@ -1,12 +1,11 @@
 <template>
-  <div>
+  <div class="button-wrapper">
     <i-button>默认按钮</i-button>
     <i-button icon="settings">默认按钮</i-button>
+    <i-button icon="settings" icon-position="right">默认按钮</i-button>
     <i-button :loading="true">默认按钮</i-button>
     <i-button disabled>默认按钮</i-button>
-    <pre><code>{{content}}</code></pre>
   </div>
-
 </template>
 
 <script>
@@ -16,16 +15,12 @@
     components: {
       'i-button': Button,
     },
-    data() {
-      return {
-        content: `
-            <i-button>默认按钮</i-button>
-            <i-button icon="settings">默认按钮</i-button>
-            <i-button :loading="true">默认按钮</i-button>
-            <i-button disabled>默认按钮</i-button>
-        `.replace(/\t+| +/g,'').trim(),
-      }
-    }
   }
 
 </script>
+
+<style lang="scss" scoped>
+  .button-wrapper{
+    padding: 0 10px;
+  }
+</style>

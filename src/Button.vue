@@ -1,5 +1,5 @@
 <template>
-  <button class="i-button fuck" :class="{[`icon-${iconPosition}`]:true}"
+  <button class="i-button" :class="{[`icon-${iconPosition}`]:true}"
           @click="$emit('click')"
   >
     <i-icon v-if="!loading" class="icon" :icon-name="icon"></i-icon>
@@ -64,7 +64,7 @@
 
     &:hover { border-color: $border-color-hover; }
 
-    &:active { border-color: $button-active-bg; }
+    &:active { border-color: $border-color; }
 
     &:focus { outline: none; }
 
