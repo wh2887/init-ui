@@ -2,7 +2,7 @@
   <transition name="slide">
     <div class="sider-wrapper" v-if="visible">
       <slot></slot>
-      <button @click="visible = false">close</button>
+<!--      <button @click="visible = false">close</button>-->
     </div>
   </transition>
 </template>
@@ -32,8 +32,7 @@
   .slide-enter-active, .slide-leave-active {
     transition: all 3s;
   }
-
-  .slide-enter, .slide-leave-to {
-    margin-left: -200px;
-  }
+//  .slide-enter, .slide-leave-to {
+//    margin-left: -200px;
+//  }
 </style>
