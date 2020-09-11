@@ -25,7 +25,7 @@
 </script>
 
 <style lang="scss" scoped>
-  $blue: blue;
+  $blue: #3eaf7c;
   $tab-height: 40px;
   $border-color: #ddd;
   .tabs-head-wrapper {

@@ -1,5 +1,5 @@
 <template>
-  <div class="toast-wrapper-center" :class="toastClasses">
+  <div class="toast-wrapper-center" :class="toastClasses"  ref="toastWrapper">
     <div class="toast-wrapper" ref="wrapper">
       <div class="toast-message">
         <slot v-if="!enableHtml"></slot>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
   export default {
     name: 'InitToast',
     props: {
@@ -46,9 +45,17 @@
         validator(value) {
           return ['top', 'middle', 'bottom'].indexOf(value) >= 0
         }
+      },
+      zIndex: {
+        type: Number,
+        default: 20,
+        validator(value) {
+          return (typeof value) === 'number'
+        }
       }
     },
     mounted() {
+      this.$refs.toastWrapper.style.zIndex = this.zIndex
       this.updateStyles()
       this.execAutoClose()
     },
@@ -57,7 +64,7 @@
         return {
           [`position-${this.position}`]: true
         }
-      }
+      },
     },
     methods: {
       close() {
@@ -115,6 +122,7 @@
   }
 
   .toast-wrapper-center {
+    z-index: 20;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
