@@ -1,22 +1,20 @@
 <template>
   <div class="tabs-wrapper">
-    <i-tabs selected.sync="selectedTab">
+    <i-tabs :selected.sync="selectedTab">
       <i-tabs-head>
-        <i-tabs-item name='sports'>
+        <i-tabs-item name='tab1'>
           <i-icon icon-name="settings"></i-icon>
-          体育
+          Tab1
         </i-tabs-item>
-        <i-tabs-item name='finance'>财经</i-tabs-item>
-        <i-tabs-item name='military'>军事</i-tabs-item>
-        <template slot="actions">
-          按钮
-        </template>
+        <i-tabs-item name='tab2'>Tab2</i-tabs-item>
+        <i-tabs-item name='tab3'>Tab3</i-tabs-item>
+        <i-tabs-item name='tab4' disabled>Tab4</i-tabs-item>
       </i-tabs-head>
-
       <i-tabs-body>
-        <i-tabs-pane name='sports'>体育相关资讯</i-tabs-pane>
-        <i-tabs-pane name='finance'>财经相关资讯</i-tabs-pane>
-        <i-tabs-pane name='military'>军事相关资讯</i-tabs-pane>
+        <i-tabs-pane name='tab1'>内容1</i-tabs-pane>
+        <i-tabs-pane name='tab2'>内容2</i-tabs-pane>
+        <i-tabs-pane name='tab3'>内容3</i-tabs-pane>
+        <i-tabs-pane name='tab4'>内容4</i-tabs-pane>
       </i-tabs-body>
     </i-tabs>
   </div>
@@ -32,13 +30,10 @@
 
   export default {
     components: {
-      'i-tabs': Tabs,
-      'i-tabs-head': TabsHead,
-      'i-tabs-body': TabsBody,
-      'i-tabs-item': TabsItem,
-      'i-tabs-pane': TabsPane,
-      'i-icon': Icon
-    }
+      'i-tabs': Tabs, 'i-tabs-head': TabsHead, 'i-tabs-body': TabsBody, 'i-tabs-item': TabsItem,
+      'i-tabs-pane': TabsPane, 'i-icon': Icon
+    },
+    data() { return { selectedTab: 'tab1' } }
   }
 </script>
 
