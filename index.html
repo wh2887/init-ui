@@ -20,41 +20,16 @@
       --border-color: #999;
       --border-color-hover: #666;
     }
-
-    .response-wrapper { padding-top: 10px;
-
-    }
-     .item { text-align: center; color: white;}
-     span { display: block; background: #3eaf7c; }
-
   </style>
 </head>
 <body>
 <div id="app" style="padding: 20px">
-  <div class="response-wrapper">
-    <i-row>
-      <i-col span="24" class="item"
-             :ipad="{span:8}"
-             :narrow-pc="{span:4}"
-             :pc="{span: 2}"
-             :wide-pc="{span:1}"
-      >
-     <span>col</span>
-      </i-col>
-      <i-col span="24" class="item"
-             :ipad="{span:16}"
-             :narrow-pc="{span:20}"
-             :pc="{span: 20,offset:2}"
-             :wide-pc="{span:21}"
-      >
-        <span>col</span>
-      </i-col>
-    </i-row>
-  </div>
+  <i-input></i-input>
+  <i-input disabled></i-input>
+  <i-input readonly></i-input>
+  <i-input error="错误信息"></i-input>
+
 </div>
-
 <script src="src/app.js"></script>
-
-
 </body>
 </html>
