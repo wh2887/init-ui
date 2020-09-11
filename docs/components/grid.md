@@ -180,10 +180,11 @@ title: 'Grid - 栅格'
 #### 3. 响应式
 支持ipad 、narrowPc 、pc 、widePc 四种设备的响应式设置。  
 若不给 Col 这四个属性，默认为 手机端响应，span值为24。  
-<span style='color:red;'>注意： 若设置这四个属性，则需要对应属性 + offset 的值的和为24，具体看代码。</span>
-
+<span style='color:red;'>注意： 若设置这四个属性，则需要对应属性 + offset 的值的和为24，具体看代码。</span>  
 预览
-![](../.vuepress/public/response.gif)
+<ClientOnly>
+    <response-demo></response-demo>
+</ClientOnly>
 
 代码
 ```vue

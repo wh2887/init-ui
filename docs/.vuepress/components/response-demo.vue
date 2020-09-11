@@ -1,25 +1,6 @@
 <template>
   <div class="response-wrapper">
-    <i-row class="row">
-      <i-col class="item"
-              span="24"
-             :ipad="{span:8}"
-             :narrow-pc="{span:4}"
-             :pc="{span: 2}"
-             :wide-pc="{span:1}"
-      >
-        col
-      </i-col>
-      <i-col class="item"
-              span="24"
-             :ipad="{span:16}"
-             :narrow-pc="{span:20}"
-             :pc="{span: 20,offset:2}"
-             :wide-pc="{span:21}"
-      >
-        col
-      </i-col>
-    </i-row>
+    <img src="../public/response.gif" alt="响应式效果">
   </div>
 </template>
 
@@ -37,11 +18,5 @@
 
 <style lang="scss" scoped>
   @import "../styles/helper";
-  .response-wrapper { padding-top: $wrapper-top;
-    > .row {
-      > .item { text-align: center; color: $font-color;
-        > span { display: block; background: $background; }
-      }
-    }
-  }
+  .response-wrapper { padding-top: $wrapper-top; }
 </style>
