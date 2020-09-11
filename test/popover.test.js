@@ -37,16 +37,16 @@ describe('Popover', () => {
   })
 
   it('可以设置 trigger', (done) => {
-    Vue.component('g-popover', Popover)
+    Vue.component('i-popover', Popover)
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-    <g-popover trigger="hover" ref="a">
+    <i-popover trigger="hover" ref="a">
       <template slot="content">
       弹出内容
       </template>
       <button>点我</button>
-    </g-popover>
+    </i-popover>
     `
     const vm = new Vue({
       el: div
