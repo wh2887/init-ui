@@ -1,6 +1,10 @@
 {
   "name": "init-ui-demo",
+<<<<<<< HEAD
   "version": "0.0.5",
+=======
+  "version": "0.0.4",
+>>>>>>> 52777d54d84246963aa70eda5cb385e3496a76b0
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
@@ -8,8 +12,12 @@
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
     "docs:dev": "vuepress dev docs --temp .temp",
+<<<<<<< HEAD
     "docs:build": "vuepress build docs",
     "parcel:build": "parcel build index.js --no-cache --no-minify"
+=======
+    "docs:build": "vuepress build docs"
+>>>>>>> 52777d54d84246963aa70eda5cb385e3496a76b0
   },
   "repository": {
     "type": "git",

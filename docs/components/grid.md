@@ -197,7 +197,7 @@ title: 'Grid - 栅格'
              :narrow-pc="{span:4}"
              :pc="{span: 2}"
              :wide-pc="{span:1}"
-      >
+     >
         col
       </i-col>
       <i-col class="item"
