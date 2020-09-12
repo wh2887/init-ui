@@ -1,11 +1,11 @@
 <template>
   <div class="collapseItem">
-    <div class="title"  @click="toggle">
+    <div class="title" @click="toggle">
       {{title}}
     </div>
-    <div class="content" v-if="open">
-      <slot></slot>
-    </div>
+      <div class="content" v-if="open">
+        <slot></slot>
+      </div>
   </div>
 </template>
 
@@ -38,11 +38,12 @@
       })
     },
     methods: {
-      toggle () {
+      toggle() {
         if (this.open) {
           this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
         } else {
-          this.eventBus && this.eventBus.$emit('update:addSelected', this.name)        }
+          this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
+        }
       },
     },
   }
@@ -62,18 +63,21 @@
       align-items: center;
       padding: 0 8px;
     }
+
     &:first-child {
       > .title {
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
       }
     }
+
     &:last-child {
       > .title:last-child {
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
       }
     }
+
     > .content {
       padding: 8px;
     }

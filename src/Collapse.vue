@@ -1,6 +1,6 @@
 <template>
   <div class="collapse">
-    <slot></slot>
+      <slot></slot>
   </div>
 </template>
 
