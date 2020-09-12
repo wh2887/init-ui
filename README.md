@@ -2,6 +2,7 @@
 [![npm version](https://badge.fury.io/js/init-ui.svg)](https://badge.fury.io/js/init-ui)
 [![Build Status](https://travis-ci.org/wh2887/init-ui.svg?branch=master)](https://travis-ci.org/wh2887/init-ui)  
 
+
 作者： McCallWang  
 
 ## 介绍
