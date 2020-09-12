@@ -1,8 +1,9 @@
-# init ui - 一个 Vue UI 组件
+<p align="center"><a href="https://wh2887.github.io/init-ui/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://gitee.com/hellow2887/blogimage/raw/master/img/db06fddc-c078-41e4-b574-13810657fccf_200x200%20(1).png" alt="Init UI logo"></a></p>
+<p align="center">
+[![npm version](https://badge.fury.io/js/init-ui.svg)](https://badge.fury.io/js/init-ui)  [![Build Status](https://travis-ci.org/wh2887/init-ui.svg?branch=master)](https://travis-ci.org/wh2887/init-ui)
+</p>
 作者： McCallWang  
 
-[![npm version](https://badge.fury.io/js/init-ui.svg)](https://badge.fury.io/js/init-ui)
-[![Build Status](https://travis-ci.org/wh2887/init-ui.svg?branch=master)](https://travis-ci.org/wh2887/init-ui)
 ## 介绍
 这是我在学习 Vue 的过程中做的一个 UI 框架，希望对你有用。
 ## 开始使用
