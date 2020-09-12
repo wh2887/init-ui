@@ -30,6 +30,7 @@ module.exports = {
           '/components/tabs',
           '/components/popover',
           '/components/toast',
+          '/components/collapse',
         ],
       }
     ],
