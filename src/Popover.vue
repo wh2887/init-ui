@@ -106,8 +106,7 @@
       },
       close() {
         this.visible = false
-        console.log('执行了close')
-        document.removeEventListener('click', this.onClickDocument)
+        document && document.removeEventListener('click', this.onClickDocument)
       },
       onClick(event) {
         if (this.$refs.triggerWrapper.contains(event.target)) {

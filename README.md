@@ -28,14 +28,14 @@
     ```
     IE 15 及以上浏览器都支持此样式
     
-2. 安装 init-ui-demo
+2. 安装 init-ui
     ```
-    npm i --save init-ui-demo
+    npm i --save init-ui
     ```
-3. 引入 init-ui-demo
+3. 引入 init-ui
     ```javascript
-    import {Button, ButtonGroup, Icon} from 'init-ui-demo'
-    import 'init-ui-demo/dist/index.css'    
+    import {Button, ButtonGroup, Icon} from 'init-ui'
+    import 'init-ui/dist/index.css'    
      
     export default {
       name: 'app',
