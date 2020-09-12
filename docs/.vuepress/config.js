@@ -7,7 +7,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/install/' },
-      { text: '交流', link: 'https://github.com/wh2887/init-ui/issues' },
+      { text: 'GitHub', link: 'https://github.com/wh2887/init-ui/' },
     ],
     sidebar: [
       {
