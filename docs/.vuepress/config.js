@@ -6,12 +6,13 @@ module.exports = {
     displayAllHeaders: true,
     nav: [
       { text: '主页', link: '/' },
-      { text: '文档', link: '/guide/' },
-      { text: '交流', link: 'https://google.com' },
+      { text: '文档', link: '/install/' },
+      { text: '交流', link: 'https://github.com/wh2887/init-ui/issues' },
     ],
     sidebar: [
       {
         title:'入门',
+        collapsable: false, // 可选的, 默认值是 true,
         children: [
           '/install/',
           '/get-started/',
@@ -19,13 +20,15 @@ module.exports = {
       },
       {
         title: '组件',
+        collapsable: false, // 可选的, 默认值是 true,
+        sidebarDepth: 0,    // 可选的, 默认值是 1
         children: [
           '/components/button',
-          '/components/grid',
           '/components/input',
+          '/components/grid',
           '/components/layout',
-          '/components/popover',
           '/components/tabs',
+          '/components/popover',
           '/components/toast',
         ],
       }
