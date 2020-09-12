@@ -1,7 +1,9 @@
-<p align="center"><a href="https://wh2887.github.io/init-ui/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://gitee.com/hellow2887/blogimage/raw/master/img/db06fddc-c078-41e4-b574-13810657fccf_200x200%20(1).png" alt="Init UI logo"></a></p>
-[![npm version](https://badge.fury.io/js/init-ui.svg)](https://badge.fury.io/js/init-ui)
-[![Build Status](https://travis-ci.org/wh2887/init-ui.svg?branch=master)](https://travis-ci.org/wh2887/init-ui)  
+<p align="center"><a href="https://wh2887.github.io/init-ui/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://gitee.com/hellow2887/blogimage/raw/master/img/db06fddc-c078-41e4-b574-13810657fccf_200x200%20(1).png" alt="Init UI logo"></a></p>  
 
+<p align="center">
+    <a href="https://badge.fury.io/js/init-ui"><img src="https://badge.fury.io/js/init-ui.svg" alt="npm version" height="18"></a>
+    <img alt="Travis (.org)" src="https://img.shields.io/travis/wh2887/init-ui">
+</p>
 
 作者： McCallWang  
 
